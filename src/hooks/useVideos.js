@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import youtube from "../apis/youtube";
 
 const useVideos = (defaultSearchKeyword) => {
-  const [videos, setVideo] = useState([]);
+  const [videos, setVideos] = useState([]);
 
   useEffect(() => {
     search(defaultSearchKeyword);
@@ -15,7 +15,7 @@ const useVideos = (defaultSearchKeyword) => {
         q: keyword,
       },
     });
-    setVideo(response.data.items);
+    setVideos(response.data.items);
     // setSelectedVideo(response.data.items[0]);
   };
 
